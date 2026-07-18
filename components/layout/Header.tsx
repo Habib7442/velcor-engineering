@@ -7,15 +7,7 @@ import { Dialog } from "@base-ui/react/dialog";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/our-expertise", label: "Our Expertise" },
-  { href: "/what-we-do", label: "What We Do" },
-  { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
-];
+import { NAV_LINKS } from "@/lib/nav-links";
 
 export function Header() {
   const pathname = usePathname();

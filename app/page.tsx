@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
+import { WhoWeAre } from "@/components/sections/WhoWeAre";
 
 export const metadata: Metadata = buildMetadata({
   title: "Velcor Engineering | Product Design & Plant Engineering Partner",
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <Hero />
+      <WhoWeAre />
     </main>
   );
 }

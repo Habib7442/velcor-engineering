@@ -32,6 +32,10 @@ export function Hero() {
         className="object-cover object-right"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-bone via-bone/80 to-transparent" aria-hidden="true" />
+      <div
+        className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bone to-transparent sm:h-32 lg:h-40"
+        aria-hidden="true"
+      />
 
       <motion.div
         initial={shouldReduceMotion ? "show" : "hidden"}
@@ -54,7 +58,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.div variants={item} className="max-w-xl">
-          <p className="text-lg leading-relaxed text-muted-foreground">
+          <p className="text-lg leading-relaxed text-graphite sm:text-muted-foreground">
             <span className="font-semibold text-graphite">Velcor Engineering</span> delivers product design and
             plant engineering for industrial teams who need it done right the first time.
           </p>

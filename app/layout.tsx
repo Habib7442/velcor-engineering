@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { buildMetadata, organizationJsonLd } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
