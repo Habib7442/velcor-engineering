@@ -1,26 +1,219 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-bg: var(--destructive-bg);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-bg: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-bg: var(--warning-bg);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-bg: var(--info-bg);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-petrol: var(--petrol);
+  --color-petrol-900: var(--petrol-900);
+  --color-petrol-800: var(--petrol-800);
+  --color-petrol-700: var(--petrol-700);
+  --color-petrol-500: var(--petrol-500);
+  --color-petrol-100: var(--petrol-100);
+  --color-petrol-50: var(--petrol-50);
+  --color-amber: var(--amber);
+  --color-amber-700: var(--amber-700);
+  --color-amber-600: var(--amber-600);
+  --color-amber-500: var(--amber-500);
+  --color-amber-100: var(--amber-100);
+  --color-graphite: var(--graphite);
+  --color-steel: var(--steel);
+  --color-steel-200: var(--steel-200);
+  --color-bone: var(--bone);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Brand ramps — Petrol & Amber (PRD §8.1). Single source of truth; referenced below, never redeclared. */
+  --petrol-900: #071e25;
+  --petrol-800: #0a2c36;
+  --petrol-700: #0e3a46;
+  --petrol-500: #1c6b7e;
+  --petrol-100: #d6e4e7;
+  --petrol-50: #eef4f5;
+  --amber-700: #b96d14;
+  --amber-600: #d07c1c;
+  --amber-500: #e8912d;
+  --amber-100: #fbe6ca;
+  --graphite-900: #1f2a2e;
+  --steel-500: #5b6b70;
+  --steel-200: #c7cfd1;
+  --bone: #f7f6f2;
+  --white: #ffffff;
+
+  /* Convenience aliases to each ramp's base shade — keep component classes (bg-petrol, text-amber) working. */
+  --petrol: var(--petrol-700);
+  --amber: var(--amber-500);
+  --graphite: var(--graphite-900);
+  --steel: var(--steel-500);
+
+  --background: var(--bone);
+  --foreground: var(--graphite-900);
+  --card: var(--white);
+  --card-foreground: var(--graphite-900);
+  --popover: var(--white);
+  --popover-foreground: var(--graphite-900);
+  --primary: var(--petrol-700);
+  --primary-hover: var(--petrol-800);
+  --primary-active: var(--petrol-900);
+  --primary-foreground: var(--white);
+  --secondary: var(--petrol-100);
+  --secondary-foreground: var(--petrol-700);
+  --muted: var(--petrol-50);
+  --muted-foreground: var(--steel-500);
+  --accent: var(--amber-500);
+  --accent-hover: var(--amber-600);
+  --accent-active: var(--amber-700);
+  --accent-foreground: var(--graphite-900);
+  --link: var(--petrol-500);
+  --link-hover: var(--petrol-700);
+  --destructive: #c0392b;
+  --destructive-foreground: var(--white);
+  --destructive-bg: #fbeae8;
+  --success: #2e7d5b;
+  --success-foreground: var(--white);
+  --success-bg: #e4f0ea;
+  --warning: #d98a0b;
+  --warning-foreground: var(--graphite-900);
+  --warning-bg: #fbeed6;
+  --info: var(--petrol-500);
+  --info-foreground: var(--white);
+  --info-bg: #e1edef;
+  --border: var(--steel-200);
+  --input: var(--steel-200);
+  --ring: var(--petrol-500);
+  --chart-1: var(--petrol-700);
+  --chart-2: var(--amber-500);
+  --chart-3: var(--steel-500);
+  --chart-4: var(--petrol-500);
+  --chart-5: var(--graphite-900);
+  --radius: 0.625rem;
+  --sidebar: var(--bone);
+  --sidebar-foreground: var(--graphite-900);
+  --sidebar-primary: var(--petrol-700);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--amber-500);
+  --sidebar-accent-foreground: var(--graphite-900);
+  --sidebar-border: var(--steel-200);
+  --sidebar-ring: var(--petrol-500);
+}
+
+.dark {
+  --background: #0b191f;
+  --foreground: #f1f3f2;
+  --card: #12262e;
+  --card-foreground: #f1f3f2;
+  --popover: #12262e;
+  --popover-foreground: #f1f3f2;
+  --primary: #f0a64f;
+  --primary-hover: var(--amber-600);
+  --primary-active: var(--amber-700);
+  --primary-foreground: var(--graphite-900);
+  --secondary: #16303a;
+  --secondary-foreground: #f1f3f2;
+  --muted: #12262e;
+  --muted-foreground: #a9b4b7;
+  --accent: #f0a64f;
+  --accent-hover: var(--amber-600);
+  --accent-active: var(--amber-700);
+  --accent-foreground: var(--graphite-900);
+  --link: #f0a64f;
+  --link-hover: var(--amber-600);
+  --destructive: #e05f4e;
+  --destructive-foreground: var(--graphite-900);
+  --destructive-bg: #3a2220;
+  --success: #4fa87e;
+  --success-foreground: var(--graphite-900);
+  --success-bg: #16302a;
+  --warning: #e0a63f;
+  --warning-foreground: var(--graphite-900);
+  --warning-bg: #332715;
+  --info: #4fa8bf;
+  --info-foreground: var(--graphite-900);
+  --info-bg: #16303a;
+  --border: #274049;
+  --input: #274049;
+  --ring: #f0a64f;
+  --chart-1: #f0a64f;
+  --chart-2: var(--petrol-500);
+  --chart-3: #a9b4b7;
+  --chart-4: var(--bone);
+  --chart-5: var(--petrol-700);
+  --sidebar: #12262e;
+  --sidebar-foreground: #f1f3f2;
+  --sidebar-primary: #f0a64f;
+  --sidebar-primary-foreground: var(--graphite-900);
+  --sidebar-accent: #16303a;
+  --sidebar-accent-foreground: #f1f3f2;
+  --sidebar-border: #274049;
+  --sidebar-ring: #f0a64f;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
 }

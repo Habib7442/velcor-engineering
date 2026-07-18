@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local tool symlinks (absolute-path symlinks into .agents/skills, not portable across machines)
+.claude/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
