@@ -58,7 +58,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.div variants={item} className="max-w-xl">
-          <p className="text-lg leading-relaxed text-graphite sm:text-muted-foreground">
+          <p className="-mx-3 rounded-lg bg-bone/70 px-3 py-2 text-lg leading-relaxed text-graphite backdrop-blur-sm sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-muted-foreground sm:backdrop-blur-none">
             <span className="font-semibold text-graphite">Velcor Engineering</span> delivers product design and
             plant engineering for industrial teams who need it done right the first time.
           </p>
