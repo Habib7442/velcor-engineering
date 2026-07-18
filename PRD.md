@@ -474,7 +474,7 @@ Blog/Insights (CMS) for content SEO; multi-language; case study filtering by sec
 
 ## 16. Open questions
 1. Final legal entity name, logo, and brand colors for Velcor?
-2. Target geography/market (for local SEO + phone number)?
+2. ~~Target geography/market (for local SEO + phone number)?~~ **Resolved:** Sribhumi, Assam, India. Address `331, Khola Pt II, Sribhumi, Assam, 788701, India`, phone `+91 99578 82204`. Single source of truth in `lib/data/company.ts`, consumed by Footer and `/contact`.
 3. Which certifications/standards can Velcor legitimately display?
 4. Available case studies / client logos with permission to publish?
 5. CMS needed at launch, or static content acceptable for v1?

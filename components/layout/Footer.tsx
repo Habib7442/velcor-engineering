@@ -1,13 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/nav-links";
-
-const SOCIAL_ICONS = [
-  { name: "Facebook", src: "/social-icons/facebook.png" },
-  { name: "Instagram", src: "/social-icons/instagram.png" },
-  { name: "LinkedIn", src: "/social-icons/linkedin.png" },
-  { name: "WhatsApp", src: "/social-icons/whatsapp.png" },
-];
+import { SOCIAL_ICONS } from "@/lib/data/social-icons";
+import { company } from "@/lib/data/company";
 
 const LEGAL_LINKS = [
   { href: "/privacy-policy", label: "Privacy Policy" },
@@ -58,6 +53,17 @@ export function Footer() {
             </Link>
           ))}
         </nav>
+
+        <div className="flex flex-col gap-2 text-sm text-petrol-100">
+          <span className="text-xs font-medium tracking-wide text-petrol-100/70 uppercase">Contact</span>
+          <a href={`mailto:${company.email}`} className="hover:text-bone">
+            {company.email}
+          </a>
+          <a href={company.phone.href} className="hover:text-bone">
+            {company.phone.display}
+          </a>
+          <span className="max-w-56">{company.address}</span>
+        </div>
       </div>
 
       <div className="relative z-10 border-t border-petrol-500/30">
