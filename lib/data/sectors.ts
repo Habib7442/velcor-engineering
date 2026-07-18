@@ -1,6 +1,7 @@
 import {
   Car,
   CircuitBoard,
+  Code2,
   Cog,
   Cpu,
   Droplet,
@@ -97,5 +98,12 @@ export const SECTORS: Sector[] = [
     name: "Solar Power Plant",
     blurb: "Utility and industrial-scale solar engineering, from site layout through interconnection.",
     icon: Sun,
+  },
+  {
+    slug: "software-development",
+    name: "Software Development",
+    blurb:
+      "Web and mobile application development, plus workflow automation with tools like n8n, for teams that need custom software alongside their engineering.",
+    icon: Code2,
   },
 ];

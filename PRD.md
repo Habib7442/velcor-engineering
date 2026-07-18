@@ -190,6 +190,7 @@ Single H1 ("What We Do"). Two capability groups:
 10. Power System Studies
 11. Analysis & Simulation
 12. Solar Power Plant
+13. Software Development — web and mobile application development, plus workflow automation (e.g. n8n). Added as a Velcor service line beyond the original HEXAD-mirrored list in §1.3; not a standard plant-engineering/product-design category, so treat separately from §5.2/§5.3 when scoping the "What We Do" page.
 
 ### 5.2 What We Do — Product Design
 | Service | Short description (rewrite for Velcor) |

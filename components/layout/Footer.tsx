@@ -19,17 +19,21 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-petrol-700">
       <span
         aria-hidden="true"
-        className="font-heading pointer-events-none absolute inset-x-0 bottom-[-0.28em] z-0 text-center text-[clamp(3rem,16vw,10rem)] leading-none font-semibold whitespace-nowrap text-petrol-500/20 select-none"
+        className="font-heading pointer-events-none absolute inset-x-0 bottom-[-0.28em] z-0 text-center text-[clamp(1.25rem,5.5vw,7rem)] leading-none font-semibold tracking-tight whitespace-nowrap text-petrol-500/20 select-none"
       >
         VELCOR ENGINEERING
       </span>
 
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 sm:px-10 sm:py-16 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <span className="font-heading text-xl font-semibold text-bone">
-            Velcor <span className="font-normal text-petrol-100">Engineering</span>
-          </span>
-          <p className="mt-2 max-w-xs text-sm leading-relaxed text-petrol-100">
+          <Image
+            src="/logo_non_transparent_cropped.png"
+            alt="Velcor Engineering"
+            width={1248}
+            height={400}
+            className="h-14 w-auto"
+          />
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-petrol-100">
             Product design and plant engineering for industrial teams who need it done right the first time.
           </p>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dialog } from "@base-ui/react/dialog";
@@ -28,8 +29,15 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-10">
-        <Link href="/" className="font-heading text-xl font-semibold text-petrol">
-          Velcor <span className="font-normal text-graphite">Engineering</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo_crisp_transparent.png"
+            alt="Velcor Engineering"
+            width={1248}
+            height={400}
+            priority
+            className="h-11 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
