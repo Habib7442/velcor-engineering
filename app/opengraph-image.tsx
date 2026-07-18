@@ -7,10 +7,10 @@ export const contentType = "image/png";
 
 export default async function Image() {
   const [bgData, logoData] = await Promise.all([
-    readFile(join(process.cwd(), "public", "og_image.png"), "base64"),
-    readFile(join(process.cwd(), "public", "logo_white.png"), "base64"),
+    readFile(join(process.cwd(), "public", "og_image.jpg"), "base64"),
+    readFile(join(process.cwd(), "public", "logo_white_small.png"), "base64"),
   ]);
-  const bgSrc = `data:image/png;base64,${bgData}`;
+  const bgSrc = `data:image/jpeg;base64,${bgData}`;
   const logoSrc = `data:image/png;base64,${logoData}`;
 
   return new ImageResponse(
