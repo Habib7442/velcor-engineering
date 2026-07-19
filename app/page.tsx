@@ -3,6 +3,9 @@ import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { OurExpertise } from "@/components/sections/OurExpertise";
+import { WhatWeDoHighlight } from "@/components/sections/WhatWeDoHighlight";
+import { Faq } from "@/components/sections/Faq";
+import { FinalCta } from "@/components/sections/FinalCta";
 
 export const metadata: Metadata = buildMetadata({
   title: "Velcor Engineering | Product Design & Plant Engineering Partner",
@@ -17,6 +20,9 @@ export default function Home() {
       <Hero />
       <WhoWeAre />
       <OurExpertise />
+      <WhatWeDoHighlight />
+      <Faq />
+      <FinalCta />
     </main>
   );
 }
