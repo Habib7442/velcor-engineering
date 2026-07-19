@@ -3,7 +3,11 @@ import { company } from "@/lib/data/company";
 
 export const siteConfig = {
   name: "Velcor Engineering",
-  url: "https://velcorengineering.com",
+  // www, not the apex -- that's what actually serves content on Vercel;
+  // the bare domain 301s here. Keeping this as the canonical source
+  // means every generated URL (sitemap, canonical tags, OG, JSON-LD)
+  // points straight at it with no redirect hop.
+  url: "https://www.velcorengineering.com",
   titleTemplate: "%s | Velcor Engineering",
   defaultTitle: "Velcor Engineering | Product Design & Plant Engineering",
   defaultDescription:
