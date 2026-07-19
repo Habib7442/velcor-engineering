@@ -66,7 +66,7 @@ export function Hero() {
           <ul className="-mx-3 mt-4 flex flex-wrap gap-x-6 gap-y-2 rounded-lg bg-bone/70 px-3 py-2 backdrop-blur-sm sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
             {SERVICES.map((service) => (
               <li key={service} className="flex items-center gap-2 text-sm font-semibold text-graphite">
-                <span className="size-1.5 rounded-full bg-amber" aria-hidden="true" />
+                <span className="size-1.5 rounded-full bg-muted-foreground" aria-hidden="true" />
                 {service}
               </li>
             ))}

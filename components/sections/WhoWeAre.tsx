@@ -37,7 +37,7 @@ export function WhoWeAre() {
             <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
               {SERVICES.map((service) => (
                 <li key={service} className="flex items-center gap-2 text-sm font-semibold text-graphite">
-                  <span className="size-1.5 rounded-full bg-amber" aria-hidden="true" />
+                  <span className="size-1.5 rounded-full bg-muted-foreground" aria-hidden="true" />
                   {service}
                 </li>
               ))}

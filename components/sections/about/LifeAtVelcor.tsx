@@ -26,7 +26,7 @@ export function LifeAtVelcor() {
           <ul className="space-y-4">
             {CALLOUTS.map((callout) => (
               <li key={callout} className="flex items-start gap-3 text-base font-medium text-bone">
-                <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-amber" aria-hidden="true" />
+                <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-petrol-100" aria-hidden="true" />
                 {callout}
               </li>
             ))}
