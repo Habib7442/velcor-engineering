@@ -3,6 +3,8 @@ import { Fraunces, Inter } from "next/font/google";
 import { buildMetadata, organizationJsonLd, localBusinessJsonLd } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Preloader } from "@/components/Preloader";
+import { VapiAssistant } from "@/components/VapiAssistant";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -27,6 +29,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", "font-sans", inter.variable, fraunces.variable)}
     >
       <body className="min-h-full flex flex-col">
+        <Preloader />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
@@ -38,6 +41,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <VapiAssistant />
       </body>
     </html>
   );

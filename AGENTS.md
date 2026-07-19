@@ -73,11 +73,12 @@ Use:
 - **Next.js** (App Router, SSR/SSG) — already scaffolded on v16. Read `node_modules/next/dist/docs/` before writing routes; APIs may differ from training data.
 - **TypeScript** everywhere.
 - **Tailwind CSS v4** for styling.
-- **Supabase** — only for storing leads and newsletter signups. Nothing else in this project touches Supabase.
+- **Supabase** — leads, newsletter signups, and (added per explicit direction, accelerated from PRD §14 Phase 1.1) Careers applications: `job_applications` table + a private `resumes` Storage bucket, both `service_role`-only. Nothing else touches Supabase.
 - **`next/image`** for all images; hero video served as `.mp4`/`.webm` with a poster image, not `.mov`.
 - **Zod** for form validation schemas, used on both client and server.
-- A **CAPTCHA** provider (hCaptcha or reCAPTCHA) plus a honeypot field on both forms for spam protection — provider not yet chosen; ask before wiring captcha into the contact form.
-- **GA4** (or a privacy-first alternative) for analytics, loaded only after cookie consent.
+- Contact form spam protection is honeypot-only for now (CAPTCHA was wired with hCaptcha, then explicitly removed per direction — trivial to re-add if needed).
+- **GA4** (or a privacy-first alternative) for analytics, loaded only after cookie consent — not yet built.
+- **Vapi** (`@vapi-ai/web`) — a floating voice support assistant ("Sarah"), added per explicit direction, not originally in PRD scope. Assistant config is code (`vapi/assistant-config.mjs`), applied via `scripts/create-vapi-assistant.mjs` using a server-only private key — never created by hand in Vapi's dashboard.
 
 Do not use:
 - **Supabase Auth**, or any auth library — this site has no accounts or login.
