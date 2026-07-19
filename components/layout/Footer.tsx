@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { NAV_LINKS } from "@/lib/nav-links";
 import { SOCIAL_ICONS } from "@/lib/data/social-icons";
 import { company } from "@/lib/data/company";
@@ -46,7 +47,7 @@ export function Footer() {
           </div>
         </div>
 
-        <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-2">
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-2 lg:flex-col lg:gap-2">
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-medium text-petrol-100 hover:text-bone">
               {link.label}
@@ -54,15 +55,20 @@ export function Footer() {
           ))}
         </nav>
 
-        <div className="flex flex-col gap-2 text-sm text-petrol-100">
+        <div className="flex flex-col gap-2.5 text-sm text-petrol-100">
           <span className="text-xs font-medium tracking-wide text-petrol-100/70 uppercase">Contact</span>
-          <a href={`mailto:${company.email}`} className="hover:text-bone">
+          <a href={`mailto:${company.email}`} className="flex items-center gap-2 hover:text-bone">
+            <Mail className="size-4 shrink-0" aria-hidden="true" />
             {company.email}
           </a>
-          <a href={company.phone.href} className="hover:text-bone">
+          <a href={company.phone.href} className="flex items-center gap-2 hover:text-bone">
+            <Phone className="size-4 shrink-0" aria-hidden="true" />
             {company.phone.display}
           </a>
-          <span className="max-w-56">{company.address}</span>
+          <span className="flex items-start gap-2">
+            <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+            <span className="max-w-56">{company.address}</span>
+          </span>
         </div>
       </div>
 
