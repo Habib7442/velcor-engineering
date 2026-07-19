@@ -16,6 +16,8 @@ No Supabase CLI project is linked here yet (no `supabase/config.toml`), so the w
 |---|---|
 | `0001_create_leads.sql` | Creates the `leads` table (contact form / quote request submissions) and enables RLS with no client-facing policies — the table is only reachable via the `service_role` key from `app/api/contact/route.ts`. |
 | `0002_add_replied_to_leads.sql` | Adds a `replied boolean not null default false` column so an admin can tick it off in the Table Editor once a lead's been followed up on. App code never writes to it — new rows just get the default. |
+| `0003_create_job_applications.sql` | Creates the `job_applications` table (Careers page resume submissions) with RLS enabled and no client-facing policies — same posture as `leads`, only reachable via `service_role` from `app/api/careers/apply/route.ts`. Includes a `reviewed` boolean for the same manual-triage workflow as `leads.replied`. |
+| `0004_create_resumes_bucket.sql` | Creates the private (`public = false`) `resumes` Storage bucket. No object in it is ever reachable via a public URL — uploads happen server-side only. |
 
 ## If you want real CLI-managed migrations later
 

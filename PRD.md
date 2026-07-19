@@ -158,7 +158,9 @@ Single H1 ("What We Do"). Two capability groups:
 - Benefits/culture highlights.
 - Application CTA.
 
-**v1.1:** Individual job detail pages `/careers/[slug]` + applicant form.
+**v1.1:** Individual job detail pages `/careers/[slug]`.
+
+**Note:** The applicant/resume-upload form originally scoped for v1.1 shipped early, per explicit direction, ahead of individual job detail pages. It's a full working form — `job_applications` table + private `resumes` Storage bucket, both server-only (see `supabase/migrations/0003`–`0004`) — not the minimal mailto/form fallback described above.
 
 ---
 
