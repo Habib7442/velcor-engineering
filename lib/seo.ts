@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { company } from "@/lib/data/company";
 
 export const siteConfig = {
   name: "Velcor Engineering",
@@ -58,6 +59,12 @@ export function buildMetadata(options: BuildMetadataOptions = {}): Metadata {
       apple: [{ url: "/favicons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     },
     manifest: "/favicons/site.webmanifest",
+    // Only rendered once a real code is supplied -- Search Console gives
+    // you this after adding the property, there's nothing to fill in
+    // ahead of time.
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+      : {}),
   };
 }
 
@@ -78,6 +85,31 @@ export function organizationJsonLd(): OrganizationJsonLd {
     url: siteConfig.url,
     logo: new URL(siteConfig.logo, siteConfig.url).toString(),
     sameAs: siteConfig.sameAs,
+  };
+}
+
+export function localBusinessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    image: new URL(siteConfig.logo, siteConfig.url).toString(),
+    telephone: company.phone.href.replace("tel:", ""),
+    email: company.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: company.addressParts.streetAddress,
+      addressLocality: company.addressParts.addressLocality,
+      addressRegion: company.addressParts.addressRegion,
+      postalCode: company.addressParts.postalCode,
+      addressCountry: company.addressParts.addressCountry,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: company.geo.latitude,
+      longitude: company.geo.longitude,
+    },
   };
 }
 

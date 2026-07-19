@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { SECTORS } from "@/lib/data/sectors";
 import { ExpertiseHero } from "@/components/sections/our-expertise/ExpertiseHero";
 import { SectorSection } from "@/components/sections/our-expertise/SectorSection";
@@ -12,9 +12,18 @@ export const metadata: Metadata = buildMetadata({
   path: "/our-expertise",
 });
 
+const breadcrumbs = breadcrumbJsonLd([
+  { name: "Home", url: "/" },
+  { name: "Our Expertise", url: "/our-expertise" },
+]);
+
 export default function OurExpertisePage() {
   return (
     <main className="flex flex-1 flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
       <ExpertiseHero />
 
       {SECTORS.map((sector, index) => (

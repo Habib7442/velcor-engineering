@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { WhatWeDoHero } from "@/components/sections/what-we-do/WhatWeDoHero";
 import { ProductDesignSection } from "@/components/sections/what-we-do/ProductDesignSection";
 import { PlantEngineeringSection } from "@/components/sections/what-we-do/PlantEngineeringSection";
@@ -12,9 +12,18 @@ export const metadata: Metadata = buildMetadata({
   path: "/what-we-do",
 });
 
+const breadcrumbs = breadcrumbJsonLd([
+  { name: "Home", url: "/" },
+  { name: "What We Do", url: "/what-we-do" },
+]);
+
 export default function WhatWeDoPage() {
   return (
     <main className="flex flex-1 flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
       <WhatWeDoHero />
       <ProductDesignSection />
       <PlantEngineeringSection />

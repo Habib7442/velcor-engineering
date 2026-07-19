@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { CareersHero } from "@/components/sections/careers/CareersHero";
 import { OpenRolesEmptyState } from "@/components/sections/careers/OpenRolesEmptyState";
 import { BenefitsSection } from "@/components/sections/careers/BenefitsSection";
@@ -12,9 +12,18 @@ export const metadata: Metadata = buildMetadata({
   path: "/careers",
 });
 
+const breadcrumbs = breadcrumbJsonLd([
+  { name: "Home", url: "/" },
+  { name: "Careers", url: "/careers" },
+]);
+
 export default function CareersPage() {
   return (
     <main className="flex flex-1 flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
       <CareersHero />
       <OpenRolesEmptyState />
       <BenefitsSection />

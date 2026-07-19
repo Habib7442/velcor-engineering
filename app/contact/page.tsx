@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { ContactHero } from "@/components/sections/contact/ContactHero";
 import { ContactForm } from "@/components/sections/contact/ContactForm";
 import { ContactInfo } from "@/components/sections/contact/ContactInfo";
@@ -12,9 +12,18 @@ export const metadata: Metadata = buildMetadata({
   path: "/contact",
 });
 
+const breadcrumbs = breadcrumbJsonLd([
+  { name: "Home", url: "/" },
+  { name: "Contact", url: "/contact" },
+]);
+
 export default function ContactPage() {
   return (
     <main className="flex flex-1 flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
       <ContactHero />
 
       <section className="bg-bone">
