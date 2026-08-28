@@ -73,11 +73,17 @@ export function Hero() {
           </ul>
         </motion.div>
 
-        <motion.div variants={item} className="flex flex-wrap gap-4">
-          <Button size="lg" nativeButton={false} render={<Link href="/expertise" />}>
+        <motion.div variants={item} className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap">
+          <Button size="lg" className="w-full sm:w-auto" nativeButton={false} render={<Link href="/expertise" />}>
             Explore Services
           </Button>
-          <Button size="lg" variant="accent" nativeButton={false} render={<Link href="/contact" />}>
+          <Button
+            size="lg"
+            variant="accent"
+            className="w-full sm:w-auto"
+            nativeButton={false}
+            render={<Link href="/contact" />}
+          >
             Discuss Your Project
           </Button>
         </motion.div>
