@@ -82,8 +82,8 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-start gap-3 rounded-2xl border border-border bg-white p-8">
-        <CheckCircle2 className="size-8 text-petrol-700" aria-hidden="true" />
-        <h3 className="font-heading text-xl font-semibold text-graphite">Message sent.</h3>
+        <CheckCircle2 className="size-8 text-blue-800" aria-hidden="true" />
+        <h3 className="font-heading text-xl font-semibold text-blue-900">Message sent.</h3>
         <p className="text-sm text-muted-foreground">
           Thanks for reaching out — we&apos;ll get back to you shortly.
         </p>

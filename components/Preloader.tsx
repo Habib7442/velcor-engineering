@@ -45,7 +45,7 @@ export function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-petrol-700"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-blue-900"
           aria-hidden="true"
         >
           <div className="flex flex-col items-center gap-6">
@@ -55,21 +55,22 @@ export function Preloader() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
-                src="/logo_white_small.png"
+                src="/logo-horizontal-white.png"
                 alt="Velcor Engineering"
-                width={680}
-                height={218}
-                priority
+                width={800}
+                height={251}
+                loading="eager"
+                quality={100}
                 className="h-10 w-auto sm:h-12"
               />
             </motion.div>
 
-            <div className="h-0.5 w-40 overflow-hidden rounded-full bg-petrol-500/30">
+            <div className="h-0.5 w-40 overflow-hidden rounded-full bg-blue-500/30">
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}
                 transition={{ duration: 1.1, ease: "easeInOut", repeat: Infinity }}
-                className="h-full w-full rounded-full bg-amber"
+                className="h-full w-full rounded-full bg-blue-500"
               />
             </div>
           </div>

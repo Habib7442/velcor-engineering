@@ -299,71 +299,73 @@ Provide 6 Q&As with real, useful answers (process, engagement model, timelines, 
 
 ### 8.1 Branding & color system
 
-Velcor's palette is **Petrol + Amber** — a deep petrol primary for engineering credibility (deliberately distinct from the competitor's corporate blue) with a single warm amber accent. Original logo and typography required.
-
-**Usage ratio (60 / 30 / 10):** ~60% neutral (bone background + graphite/steel text), ~30% primary petrol (header, footer, headings, icons, section anchors), ~10% amber accent (CTAs, links, active states, key highlights only).
+Velcor's palette is **monochromatic Blue + Steel**, sampled directly from the real logo
+pixels (not eyeballed) — full spec and provenance in `DESIGN.md`. Every color in the mark
+sits at the same hue (H 216): `blue-*` is that hue at full saturation, `steel-*` is the
+same hue desaturated to ~10%, used as the neutral ramp. There is **no second accent hue**
+— hierarchy comes from lightness/weight/space, not a competing color.
 
 #### Core ramps (light mode)
 
 | Token | Hex | Use |
 |---|---|---|
-| `--petrol-900` | `#071E25` | Darkest — active states, deep backgrounds |
-| `--petrol-800` | `#0A2C36` | Primary button hover |
-| `--petrol-700` | `#0E3A46` | **Primary base** — header, footer, headings |
-| `--petrol-500` | `#1C6B7E` | Info, secondary accents, links on light |
-| `--petrol-100` | `#D6E4E7` | Tints, hover fills |
-| `--petrol-50`  | `#EEF4F5` | Subtle section backgrounds |
-| `--amber-700`  | `#B96D14` | Accent active |
-| `--amber-600`  | `#D07C1C` | Accent hover |
-| `--amber-500`  | `#E8912D` | **Accent base** — primary CTA, highlights |
-| `--amber-100`  | `#FBE6CA` | Accent tint / badge background |
-| `--graphite-900` | `#1F2A2E` | **Primary text**; text on amber |
-| `--steel-500`  | `#5B6B70` | **Secondary text**, captions |
-| `--steel-200`  | `#C7CFD1` | Borders, dividers |
-| `--bone`       | `#F7F6F2` | **Page background** |
-| `--white`      | `#FFFFFF` | Cards / surfaces |
+| `--blue-900` | `#041C41` | **Primary text/ink** — the `VELCOR` wordmark color |
+| `--blue-800` | `#0A2C5E` | Primary button (default), icon glyphs on light chips |
+| `--blue-700` | `#123C7A` | Primary button hover, link hover |
+| `--blue-600` | `#1B4E9A` | **Accent/link base** — primary CTA, links, eyebrows |
+| `--blue-500` | `#2360BA` | The accent bar in the logo — brightest brand moment |
+| `--blue-100` | `#E1EAF7` | Icon chip / tint backgrounds |
+| `--blue-50`  | `#F1F5FB` | Subtle section backgrounds |
+| `--steel-500` | `#6A727E` | **Secondary text**, captions |
+| `--steel-300` | `#C4C9D1` | Text/elements on dark blue surfaces |
+| `--steel-200` | `#DEE1E6` | Borders, dividers |
+| `--white`     | `#FFFFFF` | **Page background**, cards / surfaces |
 
 #### Interactive states
 
 | Element | Default | Hover | Active | Text on fill |
 |---|---|---|---|---|
-| Primary button | `#0E3A46` | `#0A2C36` | `#071E25` | `#FFFFFF` |
-| Accent button (CTA) | `#E8912D` | `#D07C1C` | `#B96D14` | `#1F2A2E` (dark — see A11y) |
-| Text link | `#1C6B7E` | `#0E3A46` | — | — |
-| Card border | `#C7CFD1` | `#5B6B70` | — | — |
+| Primary button (default) | `#0A2C5E` | `#041C41` | `#02142F` | `#FFFFFF` |
+| Accent button (CTA) | `#1B4E9A` | `#123C7A` | `#0A2C5E` | `#FFFFFF` |
+| Text link | `#1B4E9A` | `#123C7A` | — | — |
+| Card border | `#DEE1E6` | `#C4C9D1` | — | — |
 
 #### Semantic colors
 
 | Token | Hex | Background tint |
 |---|---|---|
-| Success | `#2E7D5B` | `#E4F0EA` |
-| Error | `#C0392B` | `#FBEAE8` |
-| Warning | `#D98A0B` | `#FBEED6` |
-| Info | `#1C6B7E` | `#E1EDEF` |
+| Success | `#238360` | `#DCEFE8` |
+| Error | `#901E16` | `#F1DBDA` |
+| Warning | `#9F6207` | `#F4E8D7` |
+| Info | `#166990` | `#DAEAF1` |
 
 #### Dark mode
 
 | Role | Hex |
 |---|---|
-| Page background | `#0B191F` |
-| Surface / card | `#12262E` |
-| Primary text | `#F1F3F2` |
-| Secondary text | `#A9B4B7` |
-| Accent (CTA / link) | `#F0A64F` (brightened amber for contrast) |
-| Border | `#274049` |
+| Page background | `#02142F` (`blue-950`) |
+| Surface / card | `#0A2244` |
+| Primary text | `#FFFFFF` |
+| Secondary text | `#C4C9D1` (`steel-300`) |
+| Accent (CTA / link) | `#2360BA` (`blue-500`) |
+| Border | `rgba(255,255,255,0.10)` |
 
 #### Accessibility rules (must enforce)
-- **Amber `#E8912D` is a large-element color only.** Never use it for body copy or thin links on white/bone — it fails WCAG AA for small text. Amber CTAs use **dark graphite `#1F2A2E` text**, not white.
-- Petrol `#0E3A46` on bone/white and graphite `#1F2A2E` on bone both pass AA — use these for text.
-- All interactive elements need a visible focus ring (petrol `#1C6B7E`, 2px).
+- Every status color's `600` step is the floor for body-size text — the `500` step fails AA for normal text.
+- `blue-900` on white and `blue-800`/`blue-600` on white all pass AA (8.07–16.83); never place `blue-900` text on a dark blue surface (`blue-900`/`blue-950`) — it disappears.
+- All interactive elements need a visible focus ring (`blue-500`, 3px box-shadow).
+- Because the palette is monochromatic, **color can never be the sole carrier of meaning** — pair every status with an icon or text label.
 - Verify every text/background pair at AA (4.5:1 normal, 3:1 large) in both light and dark modes before launch.
 
 #### Governance
-- **One accent only.** Do not introduce a second bright color; amber is the sole accent.
-- Ship all values above as CSS custom properties / design tokens with light + dark values, not hardcoded hex in components.
+- **One hue only.** Do not introduce a second color family; `steel-*` (desaturated blue) is the only neutral — never a default/pure grey.
+- Never round a rectangular element past 8px; circles/pills are a separate case.
+- Ship all values above as CSS custom properties / design tokens with light + dark values, not hardcoded hex in components. Full primitive tables, gradients, shadows, and Tailwind mapping live in `DESIGN.md`.
 
 ### 8.2 Typography
-- Distinct display + body pairing with a defined type scale, weights, and spacing.
+- Display: **Saira** (echoes the wordmark's squarish geometric caps); body: **Inter**. Both loaded via `next/font/google`.
+- Wide letter-spacing on tracked-caps treatments (eyebrows, section labels) is the brand's signature typographic gesture — reserve it for short labels, never body copy.
+- `JetBrains Mono` is reserved in `DESIGN.md` for future spec/tolerance/part-number content (case studies, technical datasheets) — not loaded until a page actually needs it.
 
 ### 8.3 Components
 Header/nav, footer, buttons (primary/secondary), cards (expertise, service, case study), accordion (FAQ), carousel, form fields + validation states, tags/badges, empty states.

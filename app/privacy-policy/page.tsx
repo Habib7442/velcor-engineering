@@ -57,15 +57,15 @@ const SECTIONS = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="flex flex-1 flex-col bg-bone">
+    <main className="flex flex-1 flex-col bg-white">
       <div className="mx-auto w-full max-w-3xl px-6 pt-28 pb-16 sm:px-10 sm:pt-32 sm:pb-24">
-        <h1 className="font-heading text-4xl font-semibold text-graphite sm:text-5xl">Privacy Policy</h1>
+        <h1 className="font-heading text-4xl font-semibold text-blue-900 sm:text-5xl">Privacy Policy</h1>
         <p className="mt-3 text-sm text-muted-foreground">Effective Date: July 18, 2026</p>
 
         <div className="mt-10 space-y-8">
           {SECTIONS.map((section) => (
             <section key={section.heading}>
-              <h2 className="font-heading text-xl font-semibold text-graphite">{section.heading}</h2>
+              <h2 className="font-heading text-xl font-semibold text-blue-900">{section.heading}</h2>
               <p className="mt-2 text-base leading-relaxed text-muted-foreground">{section.body}</p>
             </section>
           ))}

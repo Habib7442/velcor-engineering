@@ -7,7 +7,7 @@ const SERVICES = ["Automation", "Piping", "Electrical", "Mechanical", "Instrumen
 
 export function WhoWeAre() {
   return (
-    <section className="bg-bone">
+    <section className="bg-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-28">
         <div className="order-2 overflow-hidden rounded-3xl lg:order-1">
           <Image
@@ -21,22 +21,22 @@ export function WhoWeAre() {
         </div>
 
         <div className="order-1 flex flex-col items-start gap-5 lg:order-2">
-          <span className="text-xs font-medium tracking-wide text-petrol uppercase">Who We Are</span>
+          <span className="text-xs font-medium tracking-wide text-blue-600 uppercase">Who We Are</span>
 
-          <h2 className="font-heading max-w-xl text-3xl leading-[1.15] font-semibold text-graphite sm:text-4xl">
+          <h2 className="font-heading max-w-xl text-3xl leading-[1.15] font-semibold text-blue-900 sm:text-4xl">
             A multidisciplinary engineering partner, not a single-service vendor.
           </h2>
 
           <div className="max-w-xl">
             <p className="text-lg leading-relaxed text-muted-foreground">
-              <span className="font-semibold text-graphite">Velcor Engineering</span> brings product design and
+              <span className="font-semibold text-blue-900">Velcor Engineering</span> brings product design and
               plant engineering under one roof, so industrial teams get coordinated work from a single accountable
               partner instead of stitching together specialists themselves.
             </p>
 
             <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
               {SERVICES.map((service) => (
-                <li key={service} className="flex items-center gap-2 text-sm font-semibold text-graphite">
+                <li key={service} className="flex items-center gap-2 text-sm font-semibold text-blue-900">
                   <span className="size-1.5 rounded-full bg-muted-foreground" aria-hidden="true" />
                   {service}
                 </li>
@@ -46,13 +46,13 @@ export function WhoWeAre() {
 
           <Button
             variant="link"
-            className="px-0 text-petrol hover:text-petrol-800"
+            className="px-0 text-blue-600 hover:text-blue-700"
             nativeButton={false}
             render={<Link href="/about" />}
           >
             Learn More
             <ArrowRight
-              className="size-4 text-amber-700 transition-transform group-hover/button:translate-x-0.5"
+              className="size-4 text-blue-600 transition-transform group-hover/button:translate-x-0.5"
               aria-hidden="true"
             />
           </Button>

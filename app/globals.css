@@ -55,155 +55,178 @@
   --color-card: var(--card);
   --color-link: var(--link);
   --color-link-hover: var(--link-hover);
-  --color-petrol: var(--petrol);
-  --color-petrol-900: var(--petrol-900);
-  --color-petrol-800: var(--petrol-800);
-  --color-petrol-700: var(--petrol-700);
-  --color-petrol-500: var(--petrol-500);
-  --color-petrol-100: var(--petrol-100);
-  --color-petrol-50: var(--petrol-50);
-  --color-amber: var(--amber);
-  --color-amber-700: var(--amber-700);
-  --color-amber-600: var(--amber-600);
-  --color-amber-500: var(--amber-500);
-  --color-amber-100: var(--amber-100);
-  --color-graphite: var(--graphite);
-  --color-steel: var(--steel);
+
+  /* Brand ramp — one hue (H216), sampled from the logo. See DESIGN.md. */
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
+  --color-blue-400: var(--blue-400);
+  --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
+  --color-blue-700: var(--blue-700);
+  --color-blue-800: var(--blue-800);
+  --color-blue-900: var(--blue-900);
+  --color-blue-950: var(--blue-950);
+
+  /* Neutral ramp — same hue at ~10% saturation. Never mix in a pure/default grey. */
+  --color-steel-50: var(--steel-50);
+  --color-steel-100: var(--steel-100);
   --color-steel-200: var(--steel-200);
-  --color-bone: var(--bone);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-steel-300: var(--steel-300);
+  --color-steel-400: var(--steel-400);
+  --color-steel-500: var(--steel-500);
+  --color-steel-600: var(--steel-600);
+  --color-steel-700: var(--steel-700);
+  --color-steel-800: var(--steel-800);
+  --color-steel-900: var(--steel-900);
+  --color-steel-950: var(--steel-950);
+
+  /* Radius — restrained, capped at 8px. The mark is hard-edged; heavy rounding fights it. */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
+  --radius-4xl: 8px;
+
+  /* Elevation — tinted with blue-900, never neutral black. */
+  --shadow-xs: 0 1px 2px rgba(4, 28, 65, 0.06);
+  --shadow-sm: 0 1px 3px rgba(4, 28, 65, 0.1), 0 1px 2px rgba(4, 28, 65, 0.06);
+  --shadow-md: 0 4px 12px rgba(4, 28, 65, 0.1), 0 2px 4px rgba(4, 28, 65, 0.06);
+  --shadow-lg: 0 12px 28px rgba(4, 28, 65, 0.12), 0 4px 8px rgba(4, 28, 65, 0.06);
+  --shadow-xl: 0 24px 56px rgba(4, 28, 65, 0.16);
 }
 
 :root {
-  /* Brand ramps — Petrol & Amber (PRD §8.1). Single source of truth; referenced below, never redeclared. */
-  --petrol-900: #071e25;
-  --petrol-800: #0a2c36;
-  --petrol-700: #0e3a46;
-  --petrol-500: #1c6b7e;
-  --petrol-100: #d6e4e7;
-  --petrol-50: #eef4f5;
-  --amber-700: #b96d14;
-  --amber-600: #d07c1c;
-  --amber-500: #e8912d;
-  --amber-100: #fbe6ca;
-  --graphite-900: #1f2a2e;
-  --steel-500: #5b6b70;
-  --steel-200: #c7cfd1;
-  --bone: #f7f6f2;
-  --white: #ffffff;
+  /* Brand primitives — sampled directly from the logo pixels. Do not reference these
+     directly in components; go through the semantic layer below. See DESIGN.md. */
+  --blue-50: #f1f5fb;
+  --blue-100: #e1eaf7;
+  --blue-200: #c5d6ef;
+  --blue-300: #99b7e3;
+  --blue-400: #5688d5;
+  --blue-500: #2360ba;
+  --blue-600: #1b4e9a;
+  --blue-700: #123c7a;
+  --blue-800: #0a2c5e;
+  --blue-900: #041c41;
+  --blue-950: #02142f;
 
-  /* Convenience aliases to each ramp's base shade — keep component classes (bg-petrol, text-amber) working. */
-  --petrol: var(--petrol-700);
-  --amber: var(--amber-500);
-  --graphite: var(--graphite-900);
-  --steel: var(--steel-500);
+  --steel-50: #f7f8fa;
+  --steel-100: #eff0f3;
+  --steel-200: #dee1e6;
+  --steel-300: #c4c9d1;
+  --steel-400: #9ba2ae;
+  --steel-500: #6a727e;
+  --steel-600: #545b66;
+  --steel-700: #414751;
+  --steel-800: #30353e;
+  --steel-900: #21262e;
+  --steel-950: #151a20;
 
-  --background: var(--bone);
-  --foreground: var(--graphite-900);
-  --card: var(--white);
-  --card-foreground: var(--graphite-900);
-  --popover: var(--white);
-  --popover-foreground: var(--graphite-900);
-  --primary: var(--petrol-700);
-  --primary-hover: var(--petrol-800);
-  --primary-active: var(--petrol-900);
-  --primary-foreground: var(--white);
-  --secondary: var(--petrol-100);
-  --secondary-foreground: var(--petrol-700);
-  --muted: var(--petrol-50);
+  --background: #ffffff;
+  --foreground: var(--blue-900);
+  --card: #ffffff;
+  --card-foreground: var(--blue-900);
+  --popover: #ffffff;
+  --popover-foreground: var(--blue-900);
+  /* Two blue weights carry the primary/accent hierarchy the old petrol/amber pair did. */
+  --primary: var(--blue-800);
+  --primary-hover: var(--blue-900);
+  --primary-active: var(--blue-950);
+  --primary-foreground: #ffffff;
+  --secondary: var(--blue-100);
+  --secondary-foreground: var(--blue-800);
+  --muted: var(--blue-50);
   --muted-foreground: var(--steel-500);
-  --accent: var(--amber-500);
-  --accent-hover: var(--amber-600);
-  --accent-active: var(--amber-700);
-  --accent-foreground: var(--graphite-900);
-  --link: var(--petrol-500);
-  --link-hover: var(--petrol-700);
-  --destructive: #c0392b;
-  --destructive-foreground: var(--white);
-  --destructive-bg: #fbeae8;
-  --success: #2e7d5b;
-  --success-foreground: var(--white);
-  --success-bg: #e4f0ea;
-  --warning: #d98a0b;
-  --warning-foreground: var(--graphite-900);
-  --warning-bg: #fbeed6;
-  --info: var(--petrol-500);
-  --info-foreground: var(--white);
-  --info-bg: #e1edef;
+  --accent: var(--blue-600);
+  --accent-hover: var(--blue-700);
+  --accent-active: var(--blue-800);
+  --accent-foreground: #ffffff;
+  --link: var(--blue-600);
+  --link-hover: var(--blue-700);
+  --destructive: #901e16;
+  --destructive-foreground: #ffffff;
+  --destructive-bg: #f1dbda;
+  --success: #238360;
+  --success-foreground: #ffffff;
+  --success-bg: #dcefe8;
+  --warning: #9f6207;
+  --warning-foreground: #ffffff;
+  --warning-bg: #f4e8d7;
+  --info: #166990;
+  --info-foreground: #ffffff;
+  --info-bg: #daeaf1;
   --border: var(--steel-200);
-  --input: var(--steel-200);
-  --ring: var(--petrol-500);
-  --chart-1: var(--petrol-700);
-  --chart-2: var(--amber-500);
+  --input: var(--steel-300);
+  --ring: var(--blue-500);
+  --chart-1: var(--blue-800);
+  --chart-2: var(--blue-500);
   --chart-3: var(--steel-500);
-  --chart-4: var(--petrol-500);
-  --chart-5: var(--graphite-900);
-  --radius: 0.625rem;
-  --sidebar: var(--bone);
-  --sidebar-foreground: var(--graphite-900);
-  --sidebar-primary: var(--petrol-700);
-  --sidebar-primary-foreground: var(--white);
-  --sidebar-accent: var(--amber-500);
-  --sidebar-accent-foreground: var(--graphite-900);
+  --chart-4: var(--blue-600);
+  --chart-5: var(--blue-900);
+  --radius: 4px;
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--blue-900);
+  --sidebar-primary: var(--blue-800);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--blue-600);
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: var(--steel-200);
-  --sidebar-ring: var(--petrol-500);
+  --sidebar-ring: var(--blue-500);
 }
 
 .dark {
-  --background: #0b191f;
-  --foreground: #f1f3f2;
-  --card: #12262e;
-  --card-foreground: #f1f3f2;
-  --popover: #12262e;
-  --popover-foreground: #f1f3f2;
-  --primary: #f0a64f;
-  --primary-hover: var(--amber-600);
-  --primary-active: var(--amber-700);
-  --primary-foreground: var(--graphite-900);
+  --background: var(--blue-950);
+  --foreground: #ffffff;
+  --card: #0a2244;
+  --card-foreground: #ffffff;
+  --popover: #0a2244;
+  --popover-foreground: #ffffff;
+  --primary: var(--blue-500);
+  --primary-hover: var(--blue-400);
+  --primary-active: var(--blue-600);
+  --primary-foreground: #ffffff;
   --secondary: #16303a;
-  --secondary-foreground: #f1f3f2;
-  --muted: #12262e;
-  --muted-foreground: #a9b4b7;
-  --accent: #f0a64f;
-  --accent-hover: var(--amber-600);
-  --accent-active: var(--amber-700);
-  --accent-foreground: var(--graphite-900);
-  --link: #f0a64f;
-  --link-hover: var(--amber-600);
-  --destructive: #e05f4e;
-  --destructive-foreground: var(--graphite-900);
-  --destructive-bg: #3a2220;
-  --success: #4fa87e;
-  --success-foreground: var(--graphite-900);
-  --success-bg: #16302a;
-  --warning: #e0a63f;
-  --warning-foreground: var(--graphite-900);
-  --warning-bg: #332715;
-  --info: #4fa8bf;
-  --info-foreground: var(--graphite-900);
-  --info-bg: #16303a;
-  --border: #274049;
-  --input: #274049;
-  --ring: #f0a64f;
-  --chart-1: #f0a64f;
-  --chart-2: var(--petrol-500);
-  --chart-3: #a9b4b7;
-  --chart-4: var(--bone);
-  --chart-5: var(--petrol-700);
-  --sidebar: #12262e;
-  --sidebar-foreground: #f1f3f2;
-  --sidebar-primary: #f0a64f;
-  --sidebar-primary-foreground: var(--graphite-900);
+  --secondary-foreground: #ffffff;
+  --muted: #0a2244;
+  --muted-foreground: var(--steel-300);
+  --accent: var(--blue-500);
+  --accent-hover: var(--blue-400);
+  --accent-active: var(--blue-600);
+  --accent-foreground: #ffffff;
+  --link: var(--blue-300);
+  --link-hover: var(--blue-200);
+  --destructive: #e06a5e;
+  --destructive-foreground: var(--blue-900);
+  --destructive-bg: #3a1815;
+  --success: #4fbf95;
+  --success-foreground: var(--blue-900);
+  --success-bg: #123b2c;
+  --warning: #e0a040;
+  --warning-foreground: var(--blue-900);
+  --warning-bg: #3a2a0e;
+  --info: #4fa8d0;
+  --info-foreground: var(--blue-900);
+  --info-bg: #123044;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.18);
+  --ring: var(--blue-400);
+  --chart-1: var(--blue-400);
+  --chart-2: var(--blue-500);
+  --chart-3: var(--steel-300);
+  --chart-4: #ffffff;
+  --chart-5: var(--blue-700);
+  --sidebar: #0a2244;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--blue-500);
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #16303a;
-  --sidebar-accent-foreground: #f1f3f2;
-  --sidebar-border: #274049;
-  --sidebar-ring: #f0a64f;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--blue-400);
 }
 
 @layer base {
@@ -220,10 +243,10 @@
   /* Custom scrollbar — Firefox */
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--petrol-500) var(--bone);
+    scrollbar-color: var(--blue-500) #ffffff;
   }
   .dark html {
-    scrollbar-color: #4a6b74 #0b191f;
+    scrollbar-color: var(--blue-400) var(--blue-950);
   }
 
   /* Custom scrollbar — WebKit (Chrome, Edge, Safari) */
@@ -232,24 +255,24 @@
     height: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--bone);
+    background: #ffffff;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: var(--petrol-500);
+    background-color: var(--blue-500);
     border-radius: 9999px;
-    border: 3px solid var(--bone);
+    border: 3px solid #ffffff;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--petrol-700);
+    background-color: var(--blue-700);
   }
   .dark ::-webkit-scrollbar-track {
-    background: #0b191f;
+    background: var(--blue-950);
   }
   .dark ::-webkit-scrollbar-thumb {
-    background-color: #4a6b74;
-    border-color: #0b191f;
+    background-color: var(--blue-400);
+    border-color: var(--blue-950);
   }
   .dark ::-webkit-scrollbar-thumb:hover {
-    background-color: #f0a64f;
+    background-color: var(--blue-300);
   }
 }

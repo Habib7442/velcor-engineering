@@ -87,11 +87,11 @@ export function ResumeApplicationForm() {
 
   if (status === "success") {
     return (
-      <section id="apply" className="scroll-mt-24 bg-bone">
+      <section id="apply" className="scroll-mt-24 bg-white">
         <div className="mx-auto max-w-3xl px-6 py-14 sm:px-10 sm:py-16">
           <div className="flex flex-col items-start gap-3 rounded-2xl border border-border bg-white p-8">
-            <CheckCircle2 className="size-8 text-petrol-700" aria-hidden="true" />
-            <h3 className="font-heading text-xl font-semibold text-graphite">Application received.</h3>
+            <CheckCircle2 className="size-8 text-blue-800" aria-hidden="true" />
+            <h3 className="font-heading text-xl font-semibold text-blue-900">Application received.</h3>
             <p className="text-sm text-muted-foreground">
               Thanks for reaching out — we&apos;ll be in touch if there&apos;s a fit.
             </p>
@@ -105,10 +105,10 @@ export function ResumeApplicationForm() {
   }
 
   return (
-    <section id="apply" className="scroll-mt-24 bg-bone">
+    <section id="apply" className="scroll-mt-24 bg-white">
       <div className="mx-auto max-w-3xl px-6 py-14 sm:px-10 sm:py-16">
-        <span className="text-xs font-medium tracking-wide text-petrol uppercase">Apply</span>
-        <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-graphite sm:text-4xl">
+        <span className="text-xs font-medium tracking-wide text-blue-600 uppercase">Apply</span>
+        <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-blue-900 sm:text-4xl">
           Send Us Your Resume
         </h2>
 

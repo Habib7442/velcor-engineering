@@ -45,22 +45,25 @@ const VALUES: Value[] = [
 
 export function CultureValues() {
   return (
-    <section className="bg-bone">
+    <section className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10 sm:py-20">
         <div className="max-w-2xl">
-          <span className="text-xs font-medium tracking-wide text-petrol uppercase">Culture &amp; Values</span>
-          <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-graphite sm:text-4xl">
+          <span className="text-xs font-medium tracking-wide text-blue-600 uppercase">Culture &amp; Values</span>
+          <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-blue-900 sm:text-4xl">
             What guides how we work.
           </h2>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map((value) => (
-            <div key={value.name} className="rounded-2xl border border-border bg-white p-6">
-              <div className="flex size-10 items-center justify-center rounded-full bg-amber-100">
-                <value.icon className="size-5 text-petrol-700" aria-hidden="true" />
+            <div
+              key={value.name}
+              className="rounded-lg border border-steel-200 bg-gradient-to-br from-white via-blue-50 to-blue-100 p-6 shadow-sm"
+            >
+              <div className="flex size-10 items-center justify-center rounded-full bg-blue-100">
+                <value.icon className="size-5 text-blue-800" aria-hidden="true" />
               </div>
-              <h3 className="font-heading mt-4 text-lg font-semibold text-graphite">{value.name}</h3>
+              <h3 className="font-heading mt-4 text-lg font-semibold text-blue-900">{value.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{value.description}</p>
             </div>
           ))}

@@ -34,11 +34,11 @@ const BENEFITS: Benefit[] = [
 
 export function BenefitsSection() {
   return (
-    <section className="bg-petrol-50">
+    <section className="bg-blue-50">
       <div className="mx-auto max-w-6xl px-6 py-14 sm:px-10 sm:py-16">
         <div className="max-w-2xl">
-          <span className="text-xs font-medium tracking-wide text-petrol uppercase">Why Velcor</span>
-          <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-graphite sm:text-4xl">
+          <span className="text-xs font-medium tracking-wide text-blue-600 uppercase">Why Velcor</span>
+          <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-blue-900 sm:text-4xl">
             What working here actually looks like.
           </h2>
         </div>
@@ -46,10 +46,10 @@ export function BenefitsSection() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {BENEFITS.map((benefit) => (
             <div key={benefit.name} className="rounded-2xl border border-border bg-white p-6">
-              <div className="flex size-10 items-center justify-center rounded-full bg-amber-100">
-                <benefit.icon className="size-5 text-petrol-700" aria-hidden="true" />
+              <div className="flex size-10 items-center justify-center rounded-full bg-blue-100">
+                <benefit.icon className="size-5 text-blue-800" aria-hidden="true" />
               </div>
-              <h3 className="font-heading mt-4 text-lg font-semibold text-graphite">{benefit.name}</h3>
+              <h3 className="font-heading mt-4 text-lg font-semibold text-blue-900">{benefit.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{benefit.description}</p>
             </div>
           ))}

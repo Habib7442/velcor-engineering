@@ -2,7 +2,7 @@ import { company } from "@/lib/data/company";
 
 export function ContactMap() {
   return (
-    <section className="bg-bone">
+    <section className="bg-white">
       <div className="mx-auto max-w-6xl px-6 pb-16 sm:px-10 sm:pb-24">
         <div className="h-80 w-full overflow-hidden rounded-2xl border border-border sm:h-96">
           <iframe

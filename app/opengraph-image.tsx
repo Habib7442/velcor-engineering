@@ -8,7 +8,7 @@ export const contentType = "image/png";
 export default async function Image() {
   const [bgData, logoData] = await Promise.all([
     readFile(join(process.cwd(), "public", "og_image.jpg"), "base64"),
-    readFile(join(process.cwd(), "public", "logo_white_small.png"), "base64"),
+    readFile(join(process.cwd(), "public", "logo-horizontal-white.png"), "base64"),
   ]);
   const bgSrc = `data:image/jpeg;base64,${bgData}`;
   const logoSrc = `data:image/png;base64,${logoData}`;
@@ -45,14 +45,14 @@ export default async function Image() {
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoSrc} alt="Velcor Engineering" width={340} height={109} />
+          <img src={logoSrc} alt="Velcor Engineering" width={340} height={107} />
 
           <div
             style={{
               marginTop: 28,
               fontSize: 30,
               fontWeight: 600,
-              color: "#F7F6F2",
+              color: "#FFFFFF",
               lineHeight: 1.3,
             }}
           >
@@ -64,7 +64,7 @@ export default async function Image() {
               marginTop: 14,
               fontSize: 20,
               fontWeight: 500,
-              color: "#D6E4E7",
+              color: "#C4C9D1",
             }}
           >
             Product Design &nbsp;·&nbsp; Plant Engineering

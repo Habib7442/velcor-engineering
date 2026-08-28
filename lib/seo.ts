@@ -12,7 +12,7 @@ export const siteConfig = {
   defaultTitle: "Velcor Engineering | Product Design & Plant Engineering",
   defaultDescription:
     "Velcor Engineering is a multidisciplinary engineering and design partner delivering product design and plant engineering services to industrial clients worldwide.",
-  logo: "/logo_transparent.png",
+  logo: "/logo-horizontal.png",
   sameAs: [] as string[],
 };
 

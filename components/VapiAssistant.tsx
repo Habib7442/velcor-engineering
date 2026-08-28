@@ -51,10 +51,10 @@ export function VapiAssistant() {
       type="button"
       onClick={handleClick}
       aria-label={isActive ? "End call with Sarah" : "Talk to Sarah, Velcor's voice assistant"}
-      className="fixed right-6 bottom-6 z-[90] flex size-14 items-center justify-center rounded-full bg-petrol-700 text-bone shadow-lg transition-colors hover:bg-petrol-800 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-amber/50"
+      className="fixed right-6 bottom-6 z-[90] flex size-14 items-center justify-center rounded-full bg-blue-900 text-white shadow-lg transition-colors hover:bg-blue-950 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500/50"
     >
       {isActive && (
-        <span className="absolute inset-0 animate-ping rounded-full bg-amber/40" aria-hidden="true" />
+        <span className="absolute inset-0 animate-ping rounded-full bg-blue-500/40" aria-hidden="true" />
       )}
       {isActive ? (
         <PhoneOff className="relative size-5" aria-hidden="true" />

@@ -26,7 +26,7 @@ export default function ContactPage() {
       />
       <ContactHero />
 
-      <section className="bg-bone">
+      <section className="bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 sm:px-10 sm:pb-24 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
           <ContactForm />
           <ContactInfo />

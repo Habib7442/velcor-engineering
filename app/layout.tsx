@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Saira, Inter } from "next/font/google";
 import { buildMetadata, organizationJsonLd, localBusinessJsonLd } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const fraunces = Fraunces({
+const saira = Saira({
   subsets: ["latin"],
   variable: "--font-heading",
   weight: ["400", "500", "600", "700"],
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", "font-sans", inter.variable, fraunces.variable)}
+      className={cn("h-full", "antialiased", "font-sans", inter.variable, saira.variable)}
     >
       <body className="min-h-full flex flex-col">
         <Preloader />

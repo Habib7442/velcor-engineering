@@ -38,11 +38,11 @@ const FAQ_ITEMS = [
 
 export function Faq() {
   return (
-    <section className="bg-petrol-50">
+    <section className="bg-blue-50">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10 sm:py-20">
         <div className="max-w-2xl">
-          <span className="text-xs font-medium tracking-wide text-petrol uppercase">FAQ</span>
-          <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-graphite sm:text-4xl">
+          <span className="text-xs font-medium tracking-wide text-blue-600 uppercase">FAQ</span>
+          <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-blue-900 sm:text-4xl">
             Questions we hear before a project starts.
           </h2>
         </div>
@@ -55,10 +55,10 @@ export function Faq() {
               className="rounded-2xl border border-border bg-white px-6"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="group/trigger flex w-full items-center justify-between gap-4 py-5 text-left text-base font-semibold text-graphite">
+                <Accordion.Trigger className="group/trigger flex w-full items-center justify-between gap-4 py-5 text-left text-base font-semibold text-blue-900">
                   {item.question}
                   <ChevronDown
-                    className="size-5 shrink-0 text-petrol-700 transition-transform duration-200 group-data-[panel-open]/trigger:rotate-180"
+                    className="size-5 shrink-0 text-blue-800 transition-transform duration-200 group-data-[panel-open]/trigger:rotate-180"
                     aria-hidden="true"
                   />
                 </Accordion.Trigger>
