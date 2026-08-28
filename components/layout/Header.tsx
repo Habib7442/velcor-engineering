@@ -118,7 +118,7 @@ export function Header() {
           nativeButton={false}
           render={<Link href="/contact" />}
         >
-          Talk to Us
+          Discuss Your Project
         </Button>
 
         <Dialog.Root>
@@ -175,7 +175,7 @@ export function Header() {
 
               <div className="border-t border-steel-200 px-6 py-6">
                 <Button variant="accent" size="lg" className="w-full" nativeButton={false} render={<Link href="/contact" />}>
-                  Talk to Us
+                  Discuss Your Project
                 </Button>
 
                 <div className="mt-6 flex flex-col gap-2.5 text-sm">

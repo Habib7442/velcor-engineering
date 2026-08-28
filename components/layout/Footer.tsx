@@ -27,6 +27,7 @@ export function Footer() {
             alt="Velcor Engineering"
             width={800}
             height={251}
+            loading="eager"
             quality={100}
             className="h-14 w-auto"
           />

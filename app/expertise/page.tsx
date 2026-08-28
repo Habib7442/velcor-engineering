@@ -63,7 +63,7 @@ export default function ExpertiseHubPage() {
             </p>
           </div>
           <Button size="lg" variant="accent" nativeButton={false} render={<Link href="/contact" />}>
-            Talk to Us
+            Discuss Your Project
           </Button>
         </div>
       </section>

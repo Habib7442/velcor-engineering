@@ -47,20 +47,20 @@ export function Hero() {
           variants={item}
           className="inline-flex items-center rounded-full border border-blue-600/20 bg-blue-600/5 px-4 py-1.5 text-xs font-medium tracking-wide text-blue-600 uppercase"
         >
-          Product Design — Plant Engineering
+          Engineering | Automation | Technology
         </motion.span>
 
         <motion.h1
           variants={item}
           className="font-heading max-w-2xl text-4xl leading-[1.1] font-semibold text-blue-900 sm:text-5xl lg:text-6xl"
         >
-          Multidisciplinary engineering, built to hold up under review.
+          Engineering What <span className="text-blue-600">Powers</span> Tomorrow.
         </motion.h1>
 
         <motion.div variants={item} className="max-w-xl">
           <p className="-mx-3 rounded-lg bg-white/70 px-3 py-2 text-lg leading-relaxed text-blue-900 backdrop-blur-sm sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-muted-foreground sm:backdrop-blur-none">
-            <span className="font-semibold text-blue-900">Velcor Engineering</span> delivers product design and
-            plant engineering for industrial teams who need it done right the first time.
+            <span className="font-semibold text-blue-900">Velcor Engineering</span> delivers multidisciplinary
+            solutions across industrial plants, engineered products, automation, and digital technology.
           </p>
 
           <ul className="-mx-3 mt-4 flex flex-wrap gap-x-6 gap-y-2 rounded-lg bg-white/70 px-3 py-2 backdrop-blur-sm sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
@@ -78,7 +78,7 @@ export function Hero() {
             Explore Services
           </Button>
           <Button size="lg" variant="accent" nativeButton={false} render={<Link href="/contact" />}>
-            Talk to Us
+            Discuss Your Project
           </Button>
         </motion.div>
       </motion.div>
