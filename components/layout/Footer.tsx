@@ -63,9 +63,13 @@ export function Footer() {
             <Mail className="size-4 shrink-0" aria-hidden="true" />
             {company.email}
           </a>
+          <a href={company.usPhone.href} className="flex items-center gap-2 hover:text-white">
+            <Phone className="size-4 shrink-0" aria-hidden="true" />
+            <span className="font-semibold text-white">US:</span> {company.usPhone.display}
+          </a>
           <a href={company.phone.href} className="flex items-center gap-2 hover:text-white">
             <Phone className="size-4 shrink-0" aria-hidden="true" />
-            {company.phone.display}
+            <span className="font-semibold text-white">INDIA:</span> {company.phone.display}
           </a>
           <span className="flex items-start gap-2">
             <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />

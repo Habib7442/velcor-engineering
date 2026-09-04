@@ -5,6 +5,10 @@ export const company = {
     display: "+91 99578 82204",
     href: "tel:+919957882204",
   },
+  usPhone: {
+    display: "+1 (713) 867-6225",
+    href: "tel:+17138676225",
+  },
   address: "331, Khola Pt II, Sribhumi, Assam, 788701, India",
   // Structured for schema.org PostalAddress (LocalBusiness JSON-LD) --
   // kept in sync with the display string above by hand, since it's a

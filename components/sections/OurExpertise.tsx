@@ -37,7 +37,7 @@ export function OurExpertise() {
           <div className="max-w-2xl">
             <span className="text-xs font-medium tracking-wide text-blue-600 uppercase">Our Expertise</span>
             <h2 className="font-heading mt-3 text-3xl leading-[1.15] font-semibold text-blue-900 sm:text-4xl">
-              Engineering coverage across twelve service areas.
+              Engineering Expertise Across Industries and Technologies
             </h2>
           </div>
 

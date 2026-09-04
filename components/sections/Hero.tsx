@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { EXPERTISE_CATEGORIES } from "@/lib/data/expertise";
 
 const container: Variants = {
   hidden: {},
@@ -14,8 +15,6 @@ const item: Variants = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
-
-const SERVICES = ["Automation", "Piping", "Electrical", "Mechanical", "Instrumentation", "Civil"];
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -64,10 +63,15 @@ export function Hero() {
           </p>
 
           <ul className="-mx-3 mt-4 flex flex-wrap gap-x-6 gap-y-2 rounded-lg bg-white/70 px-3 py-2 backdrop-blur-sm sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
-            {SERVICES.map((service) => (
-              <li key={service} className="flex items-center gap-2 text-sm font-semibold text-blue-900">
-                <span className="size-1.5 rounded-full bg-muted-foreground" aria-hidden="true" />
-                {service}
+            {EXPERTISE_CATEGORIES.map((category) => (
+              <li key={category.slug}>
+                <Link
+                  href={`/expertise/${category.slug}`}
+                  className="flex items-center gap-2 text-sm font-semibold text-blue-900 hover:text-blue-600"
+                >
+                  <span className="size-1.5 rounded-full bg-muted-foreground" aria-hidden="true" />
+                  {category.name}
+                </Link>
               </li>
             ))}
           </ul>

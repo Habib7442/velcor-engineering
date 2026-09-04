@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const SERVICES = ["Automation", "Piping", "Electrical", "Mechanical", "Instrumentation", "Civil"];
+const SERVICES = ["Mechanical", "Electrical", "Piping", "Instrumentation & Control", "Civil/Structural", "Analysis"];
 
 export function WhoWeAre() {
   return (
