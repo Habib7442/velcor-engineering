@@ -33,14 +33,9 @@ export function ContactInfo() {
         <h3 className="text-sm font-semibold text-blue-900">Connect</h3>
         <div className="mt-3 flex items-center gap-3" role="group" aria-label="Social media">
           {SOCIAL_ICONS.map((icon) => (
-            <Image
-              key={icon.name}
-              src={icon.src}
-              alt={icon.name}
-              width={30}
-              height={30}
-              className="size-[30px] rounded-full"
-            />
+            <a key={icon.name} href={icon.href} target="_blank" rel="noopener noreferrer" aria-label={icon.name}>
+              <Image src={icon.src} alt={icon.name} width={30} height={30} className="size-[30px] rounded-full" />
+            </a>
           ))}
         </div>
       </div>
