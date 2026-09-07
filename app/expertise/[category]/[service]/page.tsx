@@ -121,17 +121,6 @@ export default async function ExpertiseServicePage({ params }: { params: Promise
               </div>
             </div>
           )}
-
-          <div className="mt-8 rounded-lg border border-steel-200 bg-gradient-to-br from-white via-blue-50 to-blue-100 p-6 shadow-sm sm:p-8">
-            <h2 className="font-heading text-2xl font-bold text-blue-900 sm:text-3xl">Key Deliverables</h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {service.deliverables.map((deliverable) => (
-                <span key={deliverable} className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-blue-900 shadow-xs">
-                  {deliverable}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
