@@ -146,7 +146,7 @@ Never run from the browser:
 
 Small functions. Explicit types, no `any`. No changes outside the task's scope. No over-engineering — this is a marketing site with two write endpoints, not a platform. All copy matches the industrial B2B tone from PRD §6.1 — specific, technical, no filler ("innovate & thrive").
 
-**`Button` + `next/link` gotcha:** `components/ui/button.tsx` wraps `@base-ui/react`'s `Button`, which is polymorphic via a `render` prop (`render={<Link href="…" />}`), not `asChild`. Base UI's `Button` also assumes it renders a native `<button>` by default and warns at runtime if it doesn't — pass `nativeButton={false}` any time `render` points at a `Link`/`<a>` instead of a real button.
+**`Button` + `next/link` gotcha:** `components/ui/button.tsx` wraps `@base-ui/react`'s `Button`, which is polymorphic via a `render` prop (`render={<Link href="…" />}`), not `asChild`. Base UI's `Button` also assumes it renders a native `<button>` by default and warns at runtime if it doesn't — pass `nativeButton={false}` any time `render` points at a `Link`/`<a>` instead of a real button
 
 ---
 
